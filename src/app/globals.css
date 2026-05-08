@@ -70,8 +70,39 @@
   }
 }
 
+.header-wrap {
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.header-scallop-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: clamp(124px, 9.2vw, 154px);
+  object-fit: cover;
+  object-position: center top;
+}
+
+.header-scallop-mobile {
+  display: none;
+}
+
 .nav-logo-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: clamp(72px, 7.6vw, 112px);
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: clamp(4px, 0.5vw, 8px);
   overflow: visible;
+  pointer-events: none;
 }
 
 .nav-logo-image {
@@ -81,10 +112,6 @@
   max-height: 100%;
   filter: brightness(0) saturate(100%) invert(95%) sepia(32%) saturate(414%) hue-rotate(300deg)
     brightness(104%) contrast(97%);
-}
-
-.scallop-mobile {
-  display: none;
 }
 
 .page-purple {
@@ -97,32 +124,34 @@
 
 /* ===== Mobile: shrink elements to fit in one screen ===== */
 @media (max-width: 640px) {
-  .scallop-desktop {
-    display: none !important;
+  .header-scallop-desktop {
+    display: none;
   }
-  .scallop-mobile {
-    display: block !important;
+  .header-scallop-mobile {
+    display: block;
+    height: auto;
+    object-fit: initial;
+    object-position: initial;
   }
   .nav-logo-wrap {
-    height: clamp(72px, 12.5vw, 92px) !important;
-    padding-top: 8px !important;
-    padding-bottom: 6px !important;
+    height: clamp(46px, 12vw, 62px);
+    padding-top: clamp(4px, 1.2vw, 7px) !important;
   }
   .nav-logo-image {
-    width: clamp(84px, 25vw, 108px) !important;
-    max-height: calc(100% - 2px) !important;
+    width: clamp(76px, 22vw, 98px) !important;
+    max-height: 100% !important;
   }
   .tbh-logo-purple {
     width: 56px !important;
     margin-bottom: 4px !important;
   }
   .hero-mascot-wrap {
-    width: clamp(190px, 58vw, 260px) !important;
-    height: clamp(215px, 66vw, 300px) !important;
+    width: clamp(300px, 92vw, 412px) !important;
+    height: clamp(356px, 108vw, 486px) !important;
   }
   .hero-copy {
-    font-size: clamp(18px, 5.4vw, 23px) !important;
-    line-height: 1.24 !important;
+    font-size: clamp(14px, 4.2vw, 18px) !important;
+    line-height: 1.2 !important;
   }
   .page-purple {
     padding-top: clamp(20px, 7vw, 34px) !important;

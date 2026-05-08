@@ -25,7 +25,7 @@ export default function Home() {
         <div
           style={{
             width: "100%",
-            height: "70dvh",
+            height: "80dvh",
             minHeight: "460px",
             maxHeight: "980px",
             display: "flex",
@@ -35,19 +35,26 @@ export default function Home() {
           }}
         >
           {/* ── HEADER ── */}
-          <div style={{ flexShrink: 0, width: "100%", backgroundColor: "#c9b9d6" }}>
-            <div
-              className="nav-logo-wrap"
-              style={{
-                backgroundColor: "#c9b9d6",
-                height: "clamp(70px, 8.8vh, 118px)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "clamp(8px, 1.1vh, 14px) 0 clamp(4px, 0.7vh, 9px)",
-                overflow: "visible",
-              }}
-            >
+          <div className="header-wrap">
+            <Image
+              src="/assets/navbar-scallop.svg"
+              alt=""
+              aria-hidden="true"
+              width={1900}
+              height={123}
+              priority
+              className="header-scallop-image header-scallop-desktop"
+            />
+            <Image
+              src="/assets/header-scallop-mobile.svg"
+              alt=""
+              aria-hidden="true"
+              width={402}
+              height={84}
+              priority
+              className="header-scallop-image header-scallop-mobile"
+            />
+            <div className="nav-logo-wrap">
               <Image
                 className="nav-logo-image"
                 src="/assets/tbh-black.svg"
@@ -57,58 +64,12 @@ export default function Home() {
                 priority
                 style={{
                   objectFit: "contain",
-                  width: "clamp(80px, 10vw, 136px)",
+                  width: "clamp(72px, 9vw, 124px)",
                   height: "auto",
                   maxHeight: "100%",
                 }}
               />
             </div>
-
-            <svg
-              className="scallop-desktop"
-              width="100%"
-              height="46"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ display: "block" }}
-            >
-              <defs>
-                <pattern
-                  id="scallop-bumps"
-                  x="0"
-                  y="0"
-                  width="130"
-                  height="46"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <circle cx="65" cy="-28" r="74" fill="#c9b9d6" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="46" fill="#fbefe1" />
-              <rect width="100%" height="46" fill="url(#scallop-bumps)" />
-            </svg>
-
-            <svg
-              className="scallop-mobile"
-              width="100%"
-              height="32"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ display: "none" }}
-            >
-              <defs>
-                <pattern
-                  id="scallop-bumps-mobile"
-                  x="0"
-                  y="0"
-                  width="76"
-                  height="32"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <circle cx="38" cy="-20" r="46" fill="#c9b9d6" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="32" fill="#fbefe1" />
-              <rect width="100%" height="32" fill="url(#scallop-bumps-mobile)" />
-            </svg>
           </div>
 
           {/* ── CREAM SECTION ── */}
@@ -129,8 +90,8 @@ export default function Home() {
             <div
               className="hero-mascot-wrap"
               style={{
-                width: "clamp(160px, min(28vw, 32vh), 360px)",
-                height: "clamp(185px, min(32vw, 38vh), 430px)",
+                width: "clamp(210px, min(35vw, 42vh), 440px)",
+                height: "clamp(245px, min(40vw, 50vh), 520px)",
                 flexShrink: 0,
               }}
             >
@@ -146,9 +107,9 @@ export default function Home() {
               className="hero-copy"
               style={{
                 fontFamily: '"Bastia Bold", Georgia, serif',
-                fontSize: "clamp(22px, min(2vw, 2.7vh), 34px)",
+                fontSize: "clamp(15px, min(1.45vw, 1.95vh), 24px)",
                 color: "#1a1a1a",
-                lineHeight: 1.3,
+                lineHeight: 1.2,
                 marginBottom: "2px",
                 marginTop: "clamp(4px, 0.9vh, 14px)",
               }}
@@ -159,9 +120,9 @@ export default function Home() {
               className="hero-copy"
               style={{
                 fontFamily: '"Bastia Bold", Georgia, serif',
-                fontSize: "clamp(22px, min(2vw, 2.7vh), 34px)",
+                fontSize: "clamp(15px, min(1.45vw, 1.95vh), 24px)",
                 color: "#f1663b",
-                lineHeight: 1.3,
+                lineHeight: 1.2,
               }}
             >
               a bloody break?
