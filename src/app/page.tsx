@@ -98,8 +98,8 @@ export default function Home() {
           {/* Mascot — vh-capped so it compresses on short screens */}
           <div
             style={{
-              width: "clamp(120px, min(24vw, 30vh), 340px)",
-              height: "clamp(130px, min(27vw, 34vh), 390px)",
+              width: "clamp(200px, min(24vw, 30vh), 340px)",
+              height: "clamp(220px, min(27vw, 34vh), 390px)",
               flexShrink: 0,
             }}
           >
@@ -114,7 +114,7 @@ export default function Home() {
           <p
             style={{
               fontFamily: '"Bastia Bold", Georgia, serif',
-              fontSize: "clamp(14px, min(1.8vw, 2.4vh), 30px)",
+              fontSize: "clamp(20px, min(1.8vw, 2.4vh), 30px)",
               color: "#1a1a1a",
               lineHeight: 1.3,
               marginBottom: "2px",
@@ -126,7 +126,7 @@ export default function Home() {
           <p
             style={{
               fontFamily: '"Bastia Bold", Georgia, serif',
-              fontSize: "clamp(14px, min(1.8vw, 2.4vh), 30px)",
+              fontSize: "clamp(20px, min(1.8vw, 2.4vh), 30px)",
               color: "#f1663b",
               lineHeight: 1.3,
             }}
