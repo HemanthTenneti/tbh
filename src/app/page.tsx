@@ -65,6 +65,7 @@ export default function Home() {
             </div>
 
             <svg
+              className="scallop-desktop"
               width="100%"
               height="46"
               xmlns="http://www.w3.org/2000/svg"
@@ -85,6 +86,29 @@ export default function Home() {
               <rect width="100%" height="46" fill="#fbefe1" />
               <rect width="100%" height="46" fill="url(#scallop-bumps)" />
             </svg>
+
+            <svg
+              className="scallop-mobile"
+              width="100%"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ display: "none" }}
+            >
+              <defs>
+                <pattern
+                  id="scallop-bumps-mobile"
+                  x="0"
+                  y="0"
+                  width="76"
+                  height="32"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <circle cx="38" cy="-20" r="46" fill="#c9b9d6" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="32" fill="#fbefe1" />
+              <rect width="100%" height="32" fill="url(#scallop-bumps-mobile)" />
+            </svg>
           </div>
 
           {/* ── CREAM SECTION ── */}
@@ -103,6 +127,7 @@ export default function Home() {
             }}
           >
             <div
+              className="hero-mascot-wrap"
               style={{
                 width: "clamp(160px, min(28vw, 32vh), 360px)",
                 height: "clamp(185px, min(32vw, 38vh), 430px)",
@@ -118,6 +143,7 @@ export default function Home() {
             </div>
 
             <p
+              className="hero-copy"
               style={{
                 fontFamily: '"Bastia Bold", Georgia, serif',
                 fontSize: "clamp(22px, min(2vw, 2.7vh), 34px)",
@@ -130,6 +156,7 @@ export default function Home() {
               And for the lady, perhaps...
             </p>
             <p
+              className="hero-copy"
               style={{
                 fontFamily: '"Bastia Bold", Georgia, serif',
                 fontSize: "clamp(22px, min(2vw, 2.7vh), 34px)",
@@ -252,6 +279,7 @@ export default function Home() {
           />
 
           <p
+            className="purple-intro"
             style={{
               fontFamily: '"Helvetica Neue", Arial, sans-serif',
               fontWeight: 700,
@@ -262,6 +290,20 @@ export default function Home() {
             }}
           >
             Girlhood is exhausting. So here we are.
+          </p>
+
+          <p
+            className="purple-join-line"
+            style={{
+              fontFamily: '"Helvetica Neue", Arial, sans-serif',
+              fontWeight: 700,
+              fontSize: "clamp(12px, min(1.5vw, 1.8vh), 20px)",
+              color: "#ffffff",
+              textAlign: "center",
+              marginBottom: "clamp(12px, 2.5vh, 40px)",
+            }}
+          >
+            join the waitlist
           </p>
 
           <WaitlistForm />
