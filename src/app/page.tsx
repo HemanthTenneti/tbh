@@ -24,14 +24,15 @@ export default function Home() {
       >
         {/* ── HEADER ── */}
         <div style={{ flexShrink: 0, width: "100%" }}>
-          {/* Solid lavender bar */}
+          {/* Solid lavender bar — top padding gives logo breathing room */}
           <div
             style={{
               backgroundColor: "#c9b9d6",
-              height: "clamp(52px, 7vh, 88px)",
+              height: "clamp(52px, 7vh, 86px)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              paddingTop: "clamp(6px, 1vh, 14px)",
             }}
           >
             <Image
@@ -42,18 +43,13 @@ export default function Home() {
               priority
               style={{
                 objectFit: "contain",
-                width: "clamp(52px, 5.4vw, 88px)",
+                width: "clamp(52px, 5vw, 84px)",
                 height: "auto",
               }}
             />
           </div>
 
-          {/*
-            Scallop bumps:
-            - objectFit: cover + objectPosition: bottom → always shows the
-              rounded bump portion (bottom of SVG), never the flat top area
-            - height capped at 62px so it never gets huge on XL monitors
-          */}
+          {/* Scallop bumps — shifted +5px right to seat logo in arch gap */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/assets/header-art.svg"
@@ -62,19 +58,20 @@ export default function Home() {
             style={{
               display: "block",
               width: "calc(100% + 14px)",
-              marginLeft: "-7px",
-              height: "clamp(32px, 3.5vw, 62px)",
+              marginLeft: "5px",
+              height: "clamp(28px, 3vw, 54px)",
               objectFit: "cover",
               objectPosition: "bottom center",
             }}
           />
         </div>
 
-        {/* ── CREAM SECTION ── */}
+        {/* ── CREAM SECTION ── capped so it doesn't balloon on XL */}
         <div
           style={{
             flex: "1 0 auto",
             minHeight: "280px",
+            maxHeight: "520px",
             backgroundColor: "#fbefe1",
             display: "flex",
             flexDirection: "column",
@@ -184,11 +181,12 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ── PURPLE SECTION ── */}
+        {/* ── PURPLE SECTION ── capped so it doesn't balloon on XL */}
         <div
           style={{
             flex: "1 0 auto",
             minHeight: "380px",
+            maxHeight: "580px",
             backgroundColor: "#544396",
             display: "flex",
             flexDirection: "column",
