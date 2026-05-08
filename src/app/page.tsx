@@ -22,13 +22,13 @@ export default function Home() {
           backgroundColor: "#fbefe1",
         }}
       >
-        {/* ── HEADER ── solid bar + scallop SVG below, no cropping ── */}
+        {/* ── HEADER ── */}
         <div style={{ flexShrink: 0, width: "100%" }}>
-          {/* Solid lavender bar with logo */}
+          {/* Solid lavender bar */}
           <div
             style={{
               backgroundColor: "#c9b9d6",
-              height: "clamp(60px, 8vh, 96px)",
+              height: "clamp(52px, 7vh, 88px)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -40,11 +40,20 @@ export default function Home() {
               width={97}
               height={68}
               priority
-              style={{ objectFit: "contain", width: "clamp(56px, 6.5vw, 97px)", height: "auto" }}
+              style={{
+                objectFit: "contain",
+                width: "clamp(52px, 5.4vw, 88px)",
+                height: "auto",
+              }}
             />
           </div>
 
-          {/* Scallop border — full natural width/height, ZERO cropping */}
+          {/*
+            Scallop bumps:
+            - objectFit: cover + objectPosition: bottom → always shows the
+              rounded bump portion (bottom of SVG), never the flat top area
+            - height capped at 62px so it never gets huge on XL monitors
+          */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/assets/header-art.svg"
@@ -53,8 +62,10 @@ export default function Home() {
             style={{
               display: "block",
               width: "calc(100% + 14px)",
-              height: "auto",
-              marginLeft: "-7px",  /* -7px offset to center a gap arch */
+              marginLeft: "-7px",
+              height: "clamp(32px, 3.5vw, 62px)",
+              objectFit: "cover",
+              objectPosition: "bottom center",
             }}
           />
         </div>
