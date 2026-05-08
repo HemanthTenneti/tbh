@@ -8,11 +8,6 @@ const MARQUEE_ITEMS = ["launch party invites", "freebies", "tbh insiders", "earl
 export default function Home() {
   return (
     <>
-      {/*
-        height: 100dvh + overflow: hidden = hard viewport lock.
-        Both sections shrink via flex: 1 1 0 + min-height: 0.
-        All sizing is vh-based so nothing overflows at any screen height.
-      */}
       <div
         className="page-wrapper"
         style={{
@@ -23,118 +18,124 @@ export default function Home() {
           backgroundColor: "#fbefe1",
         }}
       >
-        {/* ── HEADER ── */}
-        <div style={{ flexShrink: 0, width: "100%" }}>
-          {/* Solid lavender bar */}
-          <div
-            style={{
-              backgroundColor: "#c9b9d6",
-              height: "clamp(52px, 7vh, 86px)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              paddingTop: "clamp(6px, 1vh, 14px)",
-            }}
-          >
-            <Image
-              src="/assets/tbh-black.svg"
-              alt="the better half"
-              width={97}
-              height={68}
-              priority
-              style={{
-                objectFit: "contain",
-                width: "clamp(52px, 5vw, 84px)",
-                height: "auto",
-              }}
-            />
-          </div>
-
-          {/*
-            Pure SVG scallop pattern — no JS, SSR-safe, tiles automatically.
-            Geometry matches Figma exactly:
-              - Each scallop: r=75, spaced 130px (adjacent circles touch at y≈2px)
-              - Bump depth: 40px  (circle centre at cy=−35 → bottom at y=40)
-              - Count adapts to any viewport width automatically
-              - Starts flush at x=0 → no left gap
-          */}
-          <svg
-            width="100%"
-            height="40"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ display: "block" }}
-          >
-            <defs>
-              <pattern
-                id="scallop-bumps"
-                x="0"
-                y="0"
-                width="130"
-                height="40"
-                patternUnits="userSpaceOnUse"
-              >
-                {/* Circle centre 35px above tile top, r=75 → bottom at y=40 */}
-                <circle cx="65" cy="-35" r="75" fill="#c9b9d6" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="40" fill="url(#scallop-bumps)" />
-          </svg>
-        </div>
-
-        {/* ── CREAM SECTION ── capped so it doesn't balloon on XL */}
         <div
-          className="page-cream"
           style={{
-            flex: "1 0 auto",
-            minHeight: "240px",
-            maxHeight: "520px",
-            backgroundColor: "#fbefe1",
+            width: "100%",
+            height: "70dvh",
+            minHeight: "460px",
+            maxHeight: "980px",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-            padding: "clamp(8px, 1.5vh, 32px) 16px clamp(10px, 1.8vh, 32px)",
+            backgroundColor: "#fbefe1",
+            flexShrink: 0,
           }}
         >
-          {/* Mascot — vh-capped so it compresses on short screens */}
-          <div
-            style={{
-              width: "clamp(150px, min(24vw, 28vh), 340px)",
-              height: "clamp(170px, min(27vw, 32vh), 390px)",
-              flexShrink: 0,
-            }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/assets/mascot.svg"
-              alt="tbh mascot"
-              style={{ width: "100%", height: "100%", objectFit: "contain" }}
-            />
+          {/* ── HEADER ── */}
+          <div style={{ flexShrink: 0, width: "100%", backgroundColor: "#c9b9d6" }}>
+            <div
+              className="nav-logo-wrap"
+              style={{
+                backgroundColor: "#c9b9d6",
+                height: "clamp(70px, 8.8vh, 118px)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "clamp(8px, 1.1vh, 14px) 0 clamp(4px, 0.7vh, 9px)",
+                overflow: "visible",
+              }}
+            >
+              <Image
+                className="nav-logo-image"
+                src="/assets/tbh-black.svg"
+                alt="the better half"
+                width={120}
+                height={82}
+                priority
+                style={{
+                  objectFit: "contain",
+                  width: "clamp(80px, 10vw, 136px)",
+                  height: "auto",
+                  maxHeight: "100%",
+                }}
+              />
+            </div>
+
+            <svg
+              width="100%"
+              height="46"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ display: "block" }}
+            >
+              <defs>
+                <pattern
+                  id="scallop-bumps"
+                  x="0"
+                  y="0"
+                  width="130"
+                  height="46"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <circle cx="65" cy="-28" r="74" fill="#c9b9d6" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="46" fill="#fbefe1" />
+              <rect width="100%" height="46" fill="url(#scallop-bumps)" />
+            </svg>
           </div>
 
-          <p
+          {/* ── CREAM SECTION ── */}
+          <div
+            className="page-cream"
             style={{
-              fontFamily: '"Bastia Bold", Georgia, serif',
-              fontSize: "clamp(20px, min(1.8vw, 2.4vh), 30px)",
-              color: "#1a1a1a",
-              lineHeight: 1.3,
-              marginBottom: "2px",
-              marginTop: "clamp(4px, 0.9vh, 14px)",
+              flex: 1,
+              minHeight: 0,
+              backgroundColor: "#fbefe1",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+              padding: "clamp(10px, 1.8vh, 32px) 16px clamp(10px, 2vh, 34px)",
             }}
           >
-            And for the lady, perhaps...
-          </p>
-          <p
-            style={{
-              fontFamily: '"Bastia Bold", Georgia, serif',
-              fontSize: "clamp(20px, min(1.8vw, 2.4vh), 30px)",
-              color: "#f1663b",
-              lineHeight: 1.3,
-            }}
-          >
-            a bloody break?
-          </p>
+            <div
+              style={{
+                width: "clamp(160px, min(28vw, 32vh), 360px)",
+                height: "clamp(185px, min(32vw, 38vh), 430px)",
+                flexShrink: 0,
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/mascot.svg"
+                alt="tbh mascot"
+                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+              />
+            </div>
+
+            <p
+              style={{
+                fontFamily: '"Bastia Bold", Georgia, serif',
+                fontSize: "clamp(22px, min(2vw, 2.7vh), 34px)",
+                color: "#1a1a1a",
+                lineHeight: 1.3,
+                marginBottom: "2px",
+                marginTop: "clamp(4px, 0.9vh, 14px)",
+              }}
+            >
+              And for the lady, perhaps...
+            </p>
+            <p
+              style={{
+                fontFamily: '"Bastia Bold", Georgia, serif',
+                fontSize: "clamp(22px, min(2vw, 2.7vh), 34px)",
+                color: "#f1663b",
+                lineHeight: 1.3,
+              }}
+            >
+              a bloody break?
+            </p>
+          </div>
         </div>
 
         {/* ── MARQUEE ── */}
@@ -145,10 +146,10 @@ export default function Home() {
             flexShrink: 0,
             display: "flex",
             alignItems: "center",
-            backgroundColor: "#f3effa",
+            backgroundColor: "transparent",
             height: "clamp(32px, 4.5vh, 54px)",
-            borderTop: "1.5px solid #ddd0f0",
-            borderBottom: "1.5px solid #ddd0f0",
+            position: "relative",
+            zIndex: 1,
           }}
         >
           <div
@@ -158,18 +159,29 @@ export default function Home() {
               whiteSpace: "nowrap",
               animation: "ticker 24s linear infinite",
               willChange: "transform",
+              transform: "translate3d(0,0,0)",
+              lineHeight: 1,
+              width: "max-content",
+              minWidth: "max-content",
             }}
           >
-            {[...Array(3)].map((_, i) => (
-              <span key={i} style={{ display: "inline-flex", alignItems: "center" }}>
-                {MARQUEE_ITEMS.map((item, j) => (
+            {[...Array(2)].map((_, i) => (
+              <span
+                key={i}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  paddingRight: "clamp(14px, 1.8vw, 26px)",
+                }}
+              >
+                {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, j) => (
                   <span
                     key={j}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
-                      gap: "clamp(7px, 1.1vw, 16px)",
-                      paddingRight: "clamp(7px, 1.1vw, 16px)",
+                      gap: "clamp(8px, 1.2vw, 16px)",
+                      paddingRight: "clamp(8px, 1.2vw, 16px)",
                     }}
                   >
                     <span
@@ -188,7 +200,12 @@ export default function Home() {
                       src="/assets/star.svg"
                       alt=""
                       aria-hidden="true"
-                      style={{ width: "clamp(11px, 1.2vw, 17px)", height: "auto", flexShrink: 0 }}
+                      style={{
+                        width: "clamp(11px, 1.2vw, 17px)",
+                        height: "auto",
+                        minWidth: "clamp(11px, 1.2vw, 17px)",
+                        flexShrink: 0,
+                      }}
                     />
                   </span>
                 ))}
@@ -258,7 +275,13 @@ export default function Home() {
       <style jsx global>{`
         @keyframes ticker {
           0%   { transform: translateX(0); }
-          100% { transform: translateX(-33.333%); }
+          100% { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .page-wrapper [style*="animation: ticker"] {
+            animation: none !important;
+          }
         }
       `}</style>
     </>

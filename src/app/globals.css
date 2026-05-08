@@ -60,7 +60,7 @@
   input::placeholder,
   textarea::placeholder {
     color: #f1663b;
-    opacity: 0.6;
+    opacity: 0.55;
   }
 
   input:focus,
@@ -70,8 +70,28 @@
   }
 }
 
+.nav-logo-wrap {
+  overflow: visible;
+}
+
+.nav-logo-image {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 /* ===== Mobile: shrink elements to fit in one screen ===== */
 @media (max-width: 640px) {
+  .nav-logo-wrap {
+    height: clamp(72px, 12.5vw, 92px) !important;
+    padding-top: 8px !important;
+    padding-bottom: 6px !important;
+  }
+  .nav-logo-image {
+    width: clamp(84px, 25vw, 108px) !important;
+    max-height: calc(100% - 2px) !important;
+  }
   .tbh-logo-purple {
     width: 56px !important;
     margin-bottom: 4px !important;
