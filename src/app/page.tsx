@@ -14,6 +14,7 @@ export default function Home() {
         All sizing is vh-based so nothing overflows at any screen height.
       */}
       <div
+        className="page-wrapper"
         style={{
           minHeight: "100dvh",
           display: "flex",
@@ -82,9 +83,10 @@ export default function Home() {
 
         {/* ── CREAM SECTION ── capped so it doesn't balloon on XL */}
         <div
+          className="page-cream"
           style={{
             flex: "1 0 auto",
-            minHeight: "280px",
+            minHeight: "240px",
             maxHeight: "520px",
             backgroundColor: "#fbefe1",
             display: "flex",
@@ -98,8 +100,8 @@ export default function Home() {
           {/* Mascot — vh-capped so it compresses on short screens */}
           <div
             style={{
-              width: "clamp(200px, min(24vw, 30vh), 340px)",
-              height: "clamp(220px, min(27vw, 34vh), 390px)",
+              width: "clamp(150px, min(24vw, 28vh), 340px)",
+              height: "clamp(170px, min(27vw, 32vh), 390px)",
               flexShrink: 0,
             }}
           >
@@ -197,9 +199,10 @@ export default function Home() {
 
         {/* ── PURPLE SECTION ── capped so it doesn't balloon on XL */}
         <div
+          className="page-purple"
           style={{
             flex: "1 0 auto",
-            minHeight: "380px",
+            minHeight: "340px",
             maxHeight: "580px",
             backgroundColor: "#544396",
             display: "flex",
@@ -214,6 +217,7 @@ export default function Home() {
             alt="tbh."
             width={120}
             height={86}
+            className="tbh-logo-purple"
             style={{
               objectFit: "contain",
               width: "clamp(60px, min(7.5vw, 9vh), 120px)",
@@ -238,6 +242,7 @@ export default function Home() {
           <WaitlistForm />
 
           <p
+            className="page-footer"
             style={{
               fontFamily: '"Helvetica Neue", Arial, sans-serif',
               fontSize: "clamp(10px, 1vh, 13px)",

@@ -59,13 +59,24 @@
 
   input::placeholder,
   textarea::placeholder {
-    color: var(--color-lavender-dark);
-    opacity: 1;
+    color: #f1663b;
+    opacity: 0.6;
   }
 
   input:focus,
   textarea:focus,
   select:focus {
     outline: none;
+  }
+}
+
+/* ===== Mobile: shrink elements to fit in one screen ===== */
+@media (max-width: 640px) {
+  .tbh-logo-purple {
+    width: 56px !important;
+    margin-bottom: 4px !important;
+  }
+  .page-footer {
+    display: none !important;
   }
 }
