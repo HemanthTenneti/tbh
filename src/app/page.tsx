@@ -4,6 +4,10 @@ import Image from "next/image";
 import WaitlistForm from "@/components/WaitlistForm";
 
 const MARQUEE_ITEMS = ["launch party invites", "freebies", "tbh insiders", "early access"];
+const MARQUEE_REPEAT_COUNT = 50;
+const MARQUEE_BASE_DURATION_SECONDS = 24;
+const MARQUEE_DURATION_SECONDS = MARQUEE_BASE_DURATION_SECONDS * MARQUEE_REPEAT_COUNT;
+const MARQUEE_SEQUENCE = Array.from({ length: MARQUEE_REPEAT_COUNT }, () => MARQUEE_ITEMS).flat();
 
 export default function Home() {
   return (
@@ -140,6 +144,7 @@ export default function Home() {
 
         {/* ── MARQUEE ── */}
         <div
+          className="marquee-shell"
           style={{
             width: "100%",
             overflow: "hidden",
@@ -153,11 +158,13 @@ export default function Home() {
           }}
         >
           <div
+            className="marquee-rail"
             style={{
               display: "flex",
               alignItems: "center",
+              gap: "clamp(18px, 2vw, 30px)",
               whiteSpace: "nowrap",
-              animation: "ticker 24s linear infinite",
+              animation: `ticker ${MARQUEE_DURATION_SECONDS}s linear infinite`,
               willChange: "transform",
               transform: "translate3d(0,0,0)",
               lineHeight: 1,
@@ -165,23 +172,24 @@ export default function Home() {
               minWidth: "max-content",
             }}
           >
-            {[...Array(2)].map((_, i) => (
+            {[0, 1].map((sequenceIndex) => (
               <span
-                key={i}
+                key={sequenceIndex}
+                className="marquee-sequence"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  paddingRight: "clamp(14px, 1.8vw, 26px)",
+                  gap: "clamp(18px, 2vw, 30px)",
                 }}
               >
-                {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, j) => (
+                {MARQUEE_SEQUENCE.map((item, itemIndex) => (
                   <span
-                    key={j}
+                    key={`${sequenceIndex}-${itemIndex}-${item}`}
+                    className="marquee-token"
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "clamp(8px, 1.2vw, 16px)",
-                      paddingRight: "clamp(8px, 1.2vw, 16px)",
                     }}
                   >
                     <span
@@ -276,12 +284,6 @@ export default function Home() {
         @keyframes ticker {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .page-wrapper [style*="animation: ticker"] {
-            animation: none !important;
-          }
         }
       `}</style>
     </>
