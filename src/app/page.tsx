@@ -24,7 +24,7 @@ export default function Home() {
       >
         {/* ── HEADER ── */}
         <div style={{ flexShrink: 0, width: "100%" }}>
-          {/* Solid lavender bar — top padding gives logo breathing room */}
+          {/* Solid lavender bar */}
           <div
             style={{
               backgroundColor: "#c9b9d6",
@@ -49,21 +49,35 @@ export default function Home() {
             />
           </div>
 
-          {/* Scallop bumps — shifted +5px right to seat logo in arch gap */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/header-art.svg"
-            alt=""
-            aria-hidden="true"
-            style={{
-              display: "block",
-              width: "calc(100% + 14px)",
-              marginLeft: "5px",
-              height: "clamp(28px, 3vw, 54px)",
-              objectFit: "cover",
-              objectPosition: "bottom center",
-            }}
-          />
+          {/*
+            Pure SVG scallop pattern — no JS, SSR-safe, tiles automatically.
+            Geometry matches Figma exactly:
+              - Each scallop: r=75, spaced 130px (adjacent circles touch at y≈2px)
+              - Bump depth: 40px  (circle centre at cy=−35 → bottom at y=40)
+              - Count adapts to any viewport width automatically
+              - Starts flush at x=0 → no left gap
+          */}
+          <svg
+            width="100%"
+            height="40"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ display: "block" }}
+          >
+            <defs>
+              <pattern
+                id="scallop-bumps"
+                x="0"
+                y="0"
+                width="130"
+                height="40"
+                patternUnits="userSpaceOnUse"
+              >
+                {/* Circle centre 35px above tile top, r=75 → bottom at y=40 */}
+                <circle cx="65" cy="-35" r="75" fill="#c9b9d6" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="40" fill="url(#scallop-bumps)" />
+          </svg>
         </div>
 
         {/* ── CREAM SECTION ── capped so it doesn't balloon on XL */}
