@@ -48,7 +48,20 @@ export default function PhoneInput({
     onChange(`${selected.code}${digitsOnly}`, digitsOnly.length === selected.maxLen);
   };
 
-  const font = '"DM Sans", sans-serif';
+  const font = '"Helvetica Neue", Arial, sans-serif';
+  const ORANGE = "#f1663b";
+
+  const sharedStyle: React.CSSProperties = {
+    backgroundColor: bgColor,
+    color: ORANGE,
+    fontFamily: font,
+    fontWeight: 700,
+    fontSize: "16px",
+    border: borderColor === "transparent" ? "none" : `1.5px solid ${borderColor}`,
+    borderRadius: "110px",
+    padding: "14px 20px",
+    outline: "none",
+  };
 
   return (
     <div className="flex gap-2">
@@ -56,23 +69,19 @@ export default function PhoneInput({
         value={selectedId}
         onChange={handleCountryChange}
         aria-label="Country code"
-        className="flex-shrink-0 px-2.5 py-2 border-b-2 border-t-0 border-l-0 border-r-0 text-sm transition-all"
         style={{
-          borderColor: borderColor,
-          backgroundColor: bgColor,
-          color: "#4B388F",
-          fontFamily: font,
-          borderRadius: "0",
+          ...sharedStyle,
           paddingRight: "28px",
           appearance: "none",
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234B388F' d='M1 1l5 5 5-5'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23f1663b' d='M1 1l5 5 5-5'/%3E%3C/svg%3E")`,
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "right 8px center",
+          backgroundPosition: "right 12px center",
+          flexShrink: 0,
           minWidth: "max-content",
         }}
       >
         {countries.map((country) => (
-          <option key={country.id} value={country.id} style={{ color: "#4B388F" }}>
+          <option key={country.id} value={country.id} style={{ color: "#f1663b" }}>
             {country.name} ({country.code})
           </option>
         ))}
@@ -88,14 +97,7 @@ export default function PhoneInput({
         maxLength={selected.maxLen}
         autoComplete="tel-national"
         aria-label="Phone number"
-        className="flex-1 px-3 py-2 border-b-2 border-t-0 border-l-0 border-r-0 text-sm transition-all"
-        style={{
-          borderColor: borderColor,
-          backgroundColor: bgColor,
-          color: "#4B388F",
-          fontFamily: font,
-          borderRadius: "0",
-        }}
+        style={{ ...sharedStyle, flex: 1 }}
       />
     </div>
   );

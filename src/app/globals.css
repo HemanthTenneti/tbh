@@ -28,12 +28,14 @@
 
 /* ===== Theme tokens ===== */
 @theme {
+  --color-lavender-nav: #e4ddf9;
   --color-lavender-light: #e8e2f4;
   --color-lavender-mid: #c9b9d6;
   --color-lavender-dark: #b5a1c7;
-  --color-purple-deep: #4b388f;
-  --color-orange: #ef5d34;
-  --color-cream: #faf8fc;
+  --color-purple: #544396;
+  --color-purple-deep: #40205f;
+  --color-coral: #f26c4f;
+  --color-cream: #fff8ec;
   --color-white: #ffffff;
 
   --font-display: "Bastia Bold", Georgia, "Times New Roman", serif;
@@ -48,8 +50,8 @@
 
   body {
     font-family: var(--font-body);
-    background-color: var(--color-lavender-mid);
-    color: var(--color-purple-deep);
+    background-color: var(--color-cream);
+    color: var(--color-purple);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
