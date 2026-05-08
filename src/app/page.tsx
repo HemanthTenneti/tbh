@@ -22,18 +22,7 @@ export default function Home() {
           backgroundColor: "#fbefe1",
         }}
       >
-        <div
-          style={{
-            width: "100%",
-            height: "80dvh",
-            minHeight: "460px",
-            maxHeight: "980px",
-            display: "flex",
-            flexDirection: "column",
-            backgroundColor: "#fbefe1",
-            flexShrink: 0,
-          }}
-        >
+        <div className="page-top">
           {/* ── HEADER ── */}
           <div className="header-wrap">
             <Image
@@ -57,7 +46,7 @@ export default function Home() {
             <div className="nav-logo-wrap">
               <Image
                 className="nav-logo-image"
-                src="/assets/tbh-black.svg"
+                src="/assets/tbh-violet.svg"
                 alt="the better half"
                 width={120}
                 height={82}
@@ -84,17 +73,9 @@ export default function Home() {
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
-              padding: "clamp(10px, 1.8vh, 32px) 16px clamp(10px, 2vh, 34px)",
             }}
           >
-            <div
-              className="hero-mascot-wrap"
-              style={{
-                width: "clamp(210px, min(35vw, 42vh), 440px)",
-                height: "clamp(245px, min(40vw, 50vh), 520px)",
-                flexShrink: 0,
-              }}
-            >
+            <div className="hero-mascot-wrap">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/assets/mascot.svg"
@@ -107,11 +88,7 @@ export default function Home() {
               className="hero-copy"
               style={{
                 fontFamily: '"Bastia Bold", Georgia, serif',
-                fontSize: "clamp(15px, min(1.45vw, 1.95vh), 24px)",
                 color: "#1a1a1a",
-                lineHeight: 1.2,
-                marginBottom: "2px",
-                marginTop: "clamp(4px, 0.9vh, 14px)",
               }}
             >
               And for the lady, perhaps...
@@ -120,9 +97,7 @@ export default function Home() {
               className="hero-copy"
               style={{
                 fontFamily: '"Bastia Bold", Georgia, serif',
-                fontSize: "clamp(15px, min(1.45vw, 1.95vh), 24px)",
                 color: "#f1663b",
-                lineHeight: 1.2,
               }}
             >
               a bloody break?
@@ -140,7 +115,6 @@ export default function Home() {
             display: "flex",
             alignItems: "center",
             backgroundColor: "transparent",
-            height: "clamp(32px, 4.5vh, 54px)",
             position: "relative",
             zIndex: 1,
           }}
@@ -216,13 +190,13 @@ export default function Home() {
           style={{
             flex: "1 0 auto",
             minHeight: "340px",
-            maxHeight: "580px",
+            maxHeight: "none",
             backgroundColor: "#544396",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            padding: "clamp(10px, 2vh, 48px) 16px clamp(10px, 2vh, 36px)",
+            padding: "clamp(10px, 2vh, 48px) 16px clamp(26px, 4.8vh, 82px)",
           }}
         >
           <Image
@@ -247,7 +221,7 @@ export default function Home() {
               fontSize: "clamp(12px, min(1.6vw, 1.9vh), 22px)",
               color: "#ffffff",
               textAlign: "center",
-              marginBottom: "clamp(12px, 2.5vh, 40px)",
+              marginBottom: "clamp(8px, 1.7vh, 24px)",
             }}
           >
             Girlhood is exhausting. So here we are.
@@ -261,7 +235,7 @@ export default function Home() {
               fontSize: "clamp(12px, min(1.5vw, 1.8vh), 20px)",
               color: "#ffffff",
               textAlign: "center",
-              marginBottom: "clamp(12px, 2.5vh, 40px)",
+              marginBottom: "clamp(14px, 2.8vh, 44px)",
             }}
           >
             join the waitlist

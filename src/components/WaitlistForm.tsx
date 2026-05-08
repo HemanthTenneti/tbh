@@ -154,7 +154,7 @@ export default function WaitlistForm() {
         style={{ width: "min(480px, 90vw)", display: "flex", flexDirection: "column", gap: 0 }}
       >
         {/* Name */}
-        <div style={{ marginBottom: "clamp(6px, 1.2vh, 18px)" }}>
+        <div style={{ marginBottom: "clamp(12px, 2.2vh, 28px)" }}>
           <label style={labelStyle}>Name</label>
           <input
             type="text"
@@ -171,7 +171,7 @@ export default function WaitlistForm() {
         </div>
 
         {/* Phone */}
-        <div style={{ marginBottom: "clamp(6px, 1.2vh, 18px)" }}>
+        <div style={{ marginBottom: "clamp(12px, 2.2vh, 28px)" }}>
           <label style={labelStyle}>Phone number</label>
           <input
             type="tel"
@@ -187,7 +187,7 @@ export default function WaitlistForm() {
         </div>
 
         {/* Instagram */}
-        <div style={{ marginBottom: "clamp(8px, 1.5vh, 24px)" }}>
+        <div style={{ marginBottom: "clamp(16px, 2.8vh, 34px)" }}>
           <label style={labelStyle}>Instagram Username</label>
           <input
             type="text"
@@ -226,8 +226,8 @@ export default function WaitlistForm() {
             backgroundColor: ORANGE,
             color: WHITE,
             fontFamily: LABEL_FONT,
-            fontSize: "clamp(15px, 1.8vh, 22px)",
-            padding: "clamp(10px, 1.6vh, 18px) clamp(28px, 3vw, 44px)",
+            fontSize: "clamp(12px, 1.35vh, 17px)",
+            padding: "clamp(7px, 1.05vh, 11px) clamp(18px, 2.2vw, 30px)",
             borderRadius: "110px",
             border: "none",
             cursor: isLoading ? "not-allowed" : "pointer",
