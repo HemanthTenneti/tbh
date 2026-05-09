@@ -187,10 +187,11 @@
     object-position: center top;
     position: relative;
     top: -17px;
+    margin-bottom: -17px;
   }
   .nav-logo-wrap {
     height: clamp(42px, 10vw, 56px);
-    padding-top: clamp(2px, 0.7vw, 5px) !important;
+    padding-top: calc(clamp(2px, 0.7vw, 5px) + 2px) !important;
   }
   .nav-logo-image {
     width: clamp(74px, 18vw, 90px) !important;
@@ -210,8 +211,8 @@
     line-height: 1.14 !important;
   }
   .page-cream {
-    justify-content: center !important;
-    padding-top: clamp(8px, 2vh, 16px) !important;
+    justify-content: flex-start !important;
+    padding-top: clamp(4px, 1.2vh, 10px) !important;
     padding-bottom: clamp(14px, 3vh, 24px) !important;
   }
   .hero-copy:first-of-type {
