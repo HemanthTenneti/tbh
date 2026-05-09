@@ -175,23 +175,25 @@
 /* ===== Mobile: shrink elements to fit in one screen ===== */
 @media (max-width: 640px) {
   .page-top {
-    min-height: 560px;
+    min-height: 520px;
   }
   .header-scallop-desktop {
     display: none;
   }
   .header-scallop-mobile {
     display: block;
-    height: auto;
-    object-fit: initial;
-    object-position: initial;
+    height: clamp(78px, 18vw, 96px);
+    object-fit: cover;
+    object-position: center top;
+    position: relative;
+    top: -17px;
   }
   .nav-logo-wrap {
-    height: clamp(46px, 12vw, 62px);
-    padding-top: clamp(4px, 1.2vw, 7px) !important;
+    height: clamp(42px, 10vw, 56px);
+    padding-top: clamp(2px, 0.7vw, 5px) !important;
   }
   .nav-logo-image {
-    width: clamp(76px, 22vw, 98px) !important;
+    width: clamp(74px, 18vw, 90px) !important;
     max-height: 100% !important;
   }
   .tbh-logo-purple {
@@ -199,23 +201,30 @@
     margin-bottom: 4px !important;
   }
   .hero-mascot-wrap {
-    width: clamp(322px, 98vw, 438px) !important;
-    height: clamp(380px, 116vw, 516px) !important;
+    width: clamp(229px, 62vw, 293px) !important;
+    height: clamp(271px, 73vw, 345px) !important;
+    margin-top: 12px !important;
   }
   .hero-copy {
-    font-size: clamp(14px, 4.2vw, 18px) !important;
-    line-height: 1.2 !important;
+    font-size: clamp(14px, 4.05vw, 17px) !important;
+    line-height: 1.14 !important;
   }
   .page-cream {
-    justify-content: flex-start !important;
-    padding-top: clamp(4px, 1.2vh, 10px) !important;
-    padding-bottom: clamp(16px, 3.2vh, 28px) !important;
+    justify-content: center !important;
+    padding-top: clamp(8px, 2vh, 16px) !important;
+    padding-bottom: clamp(14px, 3vh, 24px) !important;
   }
   .hero-copy:first-of-type {
-    margin-top: clamp(2px, 0.6vh, 8px) !important;
+    margin-top: clamp(8px, 1.9vh, 18px) !important;
+    margin-bottom: clamp(4px, 0.8vh, 8px) !important;
+  }
+  .hero-copy:last-of-type {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
   .marquee-shell {
-    min-height: 34px !important;
+    height: clamp(32px, 4vh, 42px) !important;
+    min-height: 32px !important;
   }
   .page-purple {
     background-image: url("/assets/bg-art-background.png") !important;

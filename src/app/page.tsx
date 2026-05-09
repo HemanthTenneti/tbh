@@ -252,7 +252,7 @@ export default function Home() {
               marginTop: "clamp(10px, 1.8vh, 28px)",
             }}
           >
-            ©️2026 tbh.thebetterhalf
+            © 2026 tbh.thebetterhalf
           </p>
         </div>
       </div>
