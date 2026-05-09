@@ -238,7 +238,8 @@ export default function Home() {
               marginBottom: "clamp(14px, 2.8vh, 44px)",
             }}
           >
-            join the waitlist
+            join the{" "}
+            <span style={{ color: "#f1663b" }}>waitlist</span>
           </p>
 
           <WaitlistForm />
