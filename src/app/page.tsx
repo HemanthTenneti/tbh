@@ -232,14 +232,13 @@ export default function Home() {
             style={{
               fontFamily: '"Helvetica Neue", Arial, sans-serif',
               fontWeight: 700,
-              fontSize: "clamp(12px, min(1.5vw, 1.8vh), 20px)",
-              color: "#ffffff",
+              fontSize: "clamp(14px, min(1.5vw, 1.8vh), 22px)",
+              color: "#f1663b",
               textAlign: "center",
               marginBottom: "clamp(14px, 2.8vh, 44px)",
             }}
           >
-            join the{" "}
-            <span style={{ color: "#f1663b" }}>waitlist</span>
+            join the waitlist
           </p>
 
           <WaitlistForm />
