@@ -151,6 +151,10 @@
   margin-bottom: 0;
 }
 
+.page-cream {
+  padding-bottom: calc(clamp(2px, 0.4vh, 8px) + 10px);
+}
+
 .marquee-shell {
   height: clamp(32px, 4.5vh, 54px);
   min-height: 32px;
@@ -216,7 +220,7 @@
   .page-cream {
     justify-content: flex-start !important;
     padding-top: clamp(18px, 3.4vh, 30px) !important;
-    padding-bottom: clamp(8px, 1.8vh, 14px) !important;
+    padding-bottom: calc(clamp(8px, 1.8vh, 14px) + 3px) !important;
   }
   .hero-copy:first-of-type {
     margin-top: clamp(8px, 1.9vh, 18px) !important;
@@ -247,6 +251,12 @@
   .page-footer {
     margin-top: clamp(18px, 5.5vw, 36px) !important;
     padding-bottom: clamp(6px, 2vw, 14px) !important;
+  }
+}
+
+@media (min-width: 421px) and (max-width: 429px) {
+  .page-cream {
+    padding-bottom: calc(clamp(8px, 1.8vh, 14px) + 16px) !important;
   }
 }
 
