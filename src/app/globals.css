@@ -78,9 +78,12 @@
 
 .header-scallop-image {
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
   display: block;
-  width: 100%;
+  width: 106%;
+  max-width: none;
   height: clamp(124px, 9.2vw, 154px);
   object-fit: cover;
   object-position: center top;
@@ -152,12 +155,13 @@
 }
 
 .page-cream {
-  padding-bottom: calc(clamp(2px, 0.4vh, 8px) + 10px);
+  padding-bottom: calc(clamp(8px, 1.1vw, 18px) + 8px);
 }
 
 .marquee-shell {
   height: clamp(32px, 4.5vh, 54px);
   min-height: 32px;
+  margin-top: clamp(10px, 1.8vh, 22px);
 }
 
 @media (min-width: 901px) {
@@ -189,10 +193,8 @@
   }
   .header-scallop-mobile {
     display: block;
-    width: 116%;
-    max-width: none;
+    width: 106%;
     height: auto;
-    margin-left: -8%;
     object-fit: contain;
     object-position: center top;
   }
@@ -220,7 +222,7 @@
   .page-cream {
     justify-content: flex-start !important;
     padding-top: clamp(18px, 3.4vh, 30px) !important;
-    padding-bottom: calc(clamp(8px, 1.8vh, 14px) + 3px) !important;
+    padding-bottom: clamp(14px, 5vw, 30px) !important;
   }
   .hero-copy:first-of-type {
     margin-top: clamp(8px, 1.9vh, 18px) !important;
@@ -254,12 +256,6 @@
   }
 }
 
-@media (min-width: 421px) and (max-width: 429px) {
-  .page-cream {
-    padding-bottom: calc(clamp(8px, 1.8vh, 14px) + 16px) !important;
-  }
-}
-
 /* ===== Narrow phones: prevent logo clipping while keeping lower placement ===== */
 @media (max-width: 540px) {
   .nav-logo-wrap {
@@ -273,6 +269,15 @@
 
 /* ===== Large phones/tablets: avoid the 640->desktop collapse ===== */
 @media (min-width: 641px) and (max-width: 900px) {
+  .marquee-shell {
+    margin-top: clamp(14px, 2.4vh, 30px) !important;
+  }
+  .header-scallop-image {
+    left: 0;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+  }
   .page-top {
     min-height: 680px;
   }
@@ -319,5 +324,17 @@
   .page-footer {
     margin-top: clamp(18px, 3.4vh, 34px) !important;
     padding-bottom: clamp(10px, 1.8vh, 20px) !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .marquee-shell {
+    margin-top: clamp(18px, 2.8vh, 38px);
+  }
+  .header-scallop-image {
+    left: 0;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
   }
 }
